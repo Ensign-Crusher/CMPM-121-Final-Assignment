@@ -1,0 +1,15 @@
+Tasks completed: (all)
+	Created rolling ball object with controls
+	Created sticky ball and the ability to pick up other objects
+	Created level space to test out mechanics
+
+Tasks not completed:
+	None for this week
+
+Unexpected tasks:
+	Creating different categories for different sized objects (you don't want to stick everything from the start)
+
+Link to video:
+https://drive.google.com/file/d/1aV7B3XN86rOeomxWIoc6Bf-WrMU52MlM/view?usp=sharing
+
+Note about video: There's some clipping with the camera.
