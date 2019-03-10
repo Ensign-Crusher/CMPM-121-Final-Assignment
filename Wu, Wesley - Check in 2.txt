@@ -14,8 +14,10 @@ Unexpected tasks:
 	Assign score values to different-sized objects (something that I was supposed to save for next week - turns out it's real important for testing)
 
 Link to video:
-?
+https://drive.google.com/open?id=1v_DLmFKxD6JN8cCASErd-NyMJT78CtIp
 
-Note about video: There's still clipping with the camera. Also there's odd light issues where some lights shut on or off. Might be more clipping issues with cam. Right now I'm going to pass it off as a run-down store.
+Video note: There's still clipping with the camera. Also there's odd light issues where some lights shut on or off. Might be more clipping issues with the camera. Right now I'm going to pass it off as a run-down store.
 
-Bug note: (To be fixed next week) Some items I brought in are not working properly...but it's an art thing since some of the objects are made up of smaller objects.
+Bug note: (To be fixed next week) You'll see some collider errors at the end of the video. Some items I brought in are not working properly...but it's an art thing since some of the objects are made up of smaller objects and will be fixed once I touch up some of the art assets.
+
+Side note: Technically I didn't model a new character for this week...but I did re-rig/animate it. That should count, right? The character also doesn't rotate with the ball...a task for next week.
