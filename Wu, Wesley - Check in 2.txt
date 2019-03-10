@@ -1,0 +1,21 @@
+Tasks completed: (all)
+	Model/rig/animate main character
+	Scene Changes
+	Populate levels
+
+Tasks not completed:
+	None for this week
+
+Unexpected tasks:
+	Fade into next level - because it looks lazy otherwise
+	Create animations/prefabs folder and organize things into that
+	Managing Lighting
+	Creating more categories for items
+	Assign score values to different-sized objects (something that I was supposed to save for next week - turns out it's real important for testing)
+
+Link to video:
+?
+
+Note about video: There's still clipping with the camera. Also there's odd light issues where some lights shut on or off. Might be more clipping issues with cam. Right now I'm going to pass it off as a run-down store.
+
+Bug note: (To be fixed next week) Some items I brought in are not working properly...but it's an art thing since some of the objects are made up of smaller objects.

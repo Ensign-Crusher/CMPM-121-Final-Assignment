@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //Code inspired by udemy lesson "How to make a katamari style sticky ball game in unity"
 public class StickyBall : MonoBehaviour
@@ -10,7 +12,7 @@ public class StickyBall : MonoBehaviour
     float currentZ = 0.0f;
     Vector2 unitV2;
 
-    float size = 1; //controls size of ball
+    public float size = 1; //controls size of ball
 
     public GameObject smallBallSize; //categories for ball/items
     bool smallBall = false;
@@ -18,6 +20,14 @@ public class StickyBall : MonoBehaviour
     bool mediumBall = false;
     public GameObject largeBallSize;
     bool largeBall = false;
+    public GameObject hugeBallSize;
+    bool hugeBall = false;
+    public GameObject extraBallSize;
+    bool extraBall = false;
+    public GameObject finalBallSize;
+    bool finalBall = false;
+
+    public GameObject sizeUI;
 
 
     public GameObject cameraReference;
@@ -27,7 +37,6 @@ public class StickyBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //Controls
         currentX = Input.GetAxis("Horizontal") * Time.deltaTime * -100;
         currentZ = Input.GetAxis("Vertical") * Time.deltaTime * 300;
@@ -42,7 +51,9 @@ public class StickyBall : MonoBehaviour
         //Set cam pos
         cameraReference.transform.position = new Vector3(-unitV2.x * distanceToCamera, distanceToCamera, -unitV2.y * distanceToCamera) + this.transform.position;
 
-        unlockPickUpCategories();
+        unlockPickUpCategories(); //do the function!
+
+
     }
 
     void unlockPickUpCategories()
@@ -71,12 +82,45 @@ public class StickyBall : MonoBehaviour
         }
         else if (largeBall == false)
         {
-            if (size >= 2.3f)
+            if (size >= 3.0f)
             {
                 largeBall = true;
                 for (int i = 0; i < largeBallSize.transform.childCount; i++)
                 {
                     largeBallSize.transform.GetChild(i).GetComponent<Collider>().isTrigger = true;
+                }
+            }
+        }
+        else if (hugeBall == false)
+        {
+            if (size >= 4.0f)
+            {
+                hugeBall = true;
+                for (int i = 0; i < hugeBallSize.transform.childCount; i++)
+                {
+                    hugeBallSize.transform.GetChild(i).GetComponent<Collider>().isTrigger = true;
+                }
+            }
+        }
+        else if (extraBall == false)
+        {
+            if (size >= 5.0f)
+            {
+                extraBall = true;
+                for (int i = 0; i < extraBallSize.transform.childCount; i++)
+                {
+                    extraBallSize.transform.GetChild(i).GetComponent<Collider>().isTrigger = true;
+                }
+            }
+        }
+        else if (finalBall == false)
+        {
+            if (size >= 6.0f)
+            {
+                finalBall = true;
+                for (int i = 0; i < finalBallSize.transform.childCount; i++)
+                {
+                    finalBallSize.transform.GetChild(i).GetComponent<Collider>().isTrigger = true;
                 }
             }
         }
@@ -87,14 +131,19 @@ public class StickyBall : MonoBehaviour
     {
         if(col.transform.CompareTag("CanStick"))
         {
-            //grow the ball
-            transform.localScale += new Vector3(.01f, .01f, .01f);
-            size += .1f;
-            distanceToCamera += 0.08f;
-            col.enabled = false;
+            if(0<size)
+            {
+                //grow the ball
+                transform.localScale += new Vector3(.01f, .01f, .01f);
+                size += .1f;
+                distanceToCamera += 0.08f;
+                col.enabled = false;
 
-            //Set parents so that stuck object follows ball
-            col.transform.SetParent(this.transform);
+                //Set parents so that stuck object follows ball
+                col.transform.SetParent(this.transform);
+
+                sizeUI.GetComponent<Text>().text = "Mass: " + size;
+            }
         }
     }
 }
