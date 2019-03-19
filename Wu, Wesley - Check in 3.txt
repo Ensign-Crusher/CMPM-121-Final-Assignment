@@ -16,10 +16,10 @@ Unexpected tasks:
 	Adding Skybox
 
 Link to video:
-?
+https://drive.google.com/open?id=1jYQlgOXNvzzXdZ0cs0zsMyNHtLU_uTNs
 
 GitHub link:
-
+https://github.com/Ensign-Crusher/CMPM-121-Final-Assignment
 
 Video note: Camera clipping never got fixed. Quite frankly, I'm too lazy to do it.
 
