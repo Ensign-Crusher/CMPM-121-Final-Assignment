@@ -28,14 +28,14 @@ public class LevelChange : MonoBehaviour
     {
         if (scene.buildIndex <= 0)
         {
-            if (player.GetComponent<StickyBall>().size >= 1.5f) //access player mass
+            if (player.GetComponent<StickyBall>().size >= 4.0f) //access player mass
             {
                 FadeToNextLevel();
             }
         }
-        if (scene.buildIndex >= 1)
+        if (scene.buildIndex >= 1 && scene.buildIndex < 2)
         {
-            if (player.GetComponent<StickyBall>().size >= 4.0f) //access player mass
+            if (player.GetComponent<StickyBall>().size >= 7.0f) //access player mass
             {
                 FadeToNextLevel();
             }

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - CanStick
+  - CanStick2
+  - CanStick3
   layers:
   - Default
   - TransparentFX

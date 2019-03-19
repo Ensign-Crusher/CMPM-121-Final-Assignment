@@ -1,0 +1,32 @@
+Tasks completed: (all)
+	Assign score values to different-sized objects (partly implemented last week, fully realized this week)
+	Create functional main menu
+	Add pause menu
+
+Stretch goals completed:
+	Size/score gate
+
+Tasks not completed:
+	Other stretch goals
+
+Unexpected tasks:
+	Bug-fixing - I forgot to set the tags on my supermassive items! That's why it was giving me collider errors.
+	Putting in music - harder than I expected.
+	Fixing up UI
+	Adding Skybox
+
+Link to video:
+?
+
+GitHub link:
+
+
+Video note: Camera clipping never got fixed. Quite frankly, I'm too lazy to do it.
+
+Note: For a non-programmer, this was a fun little project.
+
+Note 2: main menu was inspired by: https://www.youtube.com/watch?v=zc8ac_qUXQY&t=581s
+
+Note 3: pause menu was inspired by: https://www.youtube.com/watch?v=JivuXdrIHK0
+
+Note 4: Music was taken from youtube. Skybox from Unity Asset Store. Pick up noise was actually recorded by a housemate with their mouth.

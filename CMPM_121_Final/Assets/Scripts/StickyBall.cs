@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 //Code inspired by udemy lesson "How to make a katamari style sticky ball game in unity"
 public class StickyBall : MonoBehaviour
@@ -13,6 +14,7 @@ public class StickyBall : MonoBehaviour
     Vector2 unitV2;
 
     public float size = 1; //controls size of ball
+    public float sizeNew = 1; //helps with sound, see Update
 
     public GameObject smallBallSize; //categories for ball/items
     bool smallBall = false;
@@ -34,6 +36,12 @@ public class StickyBall : MonoBehaviour
     //public GameObject ball;
     float distanceToCamera = 5;
 
+    void Start()
+    {
+        //Audio
+        FindObjectOfType<Music>().Play("Theme");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -53,7 +61,12 @@ public class StickyBall : MonoBehaviour
 
         unlockPickUpCategories(); //do the function!
 
-
+        //Audio
+        if(size > sizeNew)
+        {
+            FindObjectOfType<Music>().Play("Pop");
+        }
+        sizeNew = size;
     }
 
     void unlockPickUpCategories()
@@ -115,7 +128,7 @@ public class StickyBall : MonoBehaviour
         }
         else if (finalBall == false)
         {
-            if (size >= 6.0f)
+            if (size >= 10.0f)
             {
                 finalBall = true;
                 for (int i = 0; i < finalBallSize.transform.childCount; i++)
@@ -136,13 +149,48 @@ public class StickyBall : MonoBehaviour
                 //grow the ball
                 transform.localScale += new Vector3(.01f, .01f, .01f);
                 size += .1f;
-                distanceToCamera += 0.08f;
+                distanceToCamera += 0.1f;
                 col.enabled = false;
 
                 //Set parents so that stuck object follows ball
                 col.transform.SetParent(this.transform);
 
-                sizeUI.GetComponent<Text>().text = "Mass: " + size;
+                sizeUI.GetComponent<Text>().text = "Mass: " + Math.Round(size, 2);
+            }
+        }
+        if (col.transform.CompareTag("CanStick2"))
+        {
+            if (0 < size)
+            {
+                //grow the ball
+                transform.localScale += new Vector3(.01f, .01f, .01f);
+                size += .2f;
+                distanceToCamera += 2.0f;
+                col.enabled = false;
+
+                //Set parents so that stuck object follows ball
+                col.transform.SetParent(this.transform);
+
+                sizeUI.GetComponent<Text>().text = "Mass: " + Math.Round(size, 2);
+
+                //Audio
+                FindObjectOfType<Music>().Play("Pop");
+            }
+        }
+        if (col.transform.CompareTag("CanStick3"))
+        {
+            if (0 < size)
+            {
+                //grow the ball
+                transform.localScale += new Vector3(.01f, .01f, .01f);
+                size += .5f;
+                distanceToCamera += 10f;
+                col.enabled = false;
+
+                //Set parents so that stuck object follows ball
+                col.transform.SetParent(this.transform);
+
+                sizeUI.GetComponent<Text>().text = "Mass: " + Math.Round(size, 2);
             }
         }
     }
